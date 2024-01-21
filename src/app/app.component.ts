@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
-import { environment } from '../environments/environment.development';
+import { environment } from '../../environments/environment.development';
 
 import { CardComponent } from './ui/card.component';
 

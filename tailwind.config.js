@@ -5,7 +5,11 @@ module.exports = {
     './src/app/ui/**/*.{html,ts}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      "colors": {
+        "shoe-wax": "#2C2C2C"
+      }
+    },
   },
   plugins: [],
 }

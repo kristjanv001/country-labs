@@ -52,3 +52,10 @@
 --destructive-foreground: 0 0% 98%;
 --ring: 0 0% 83.1%;
 }
+
+* {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}

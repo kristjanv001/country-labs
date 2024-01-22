@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
-import { environment } from '../../environments/environment.development';
-
+import { environment } from '../environments/environment';
 import { CardComponent } from './ui/card.component';
 
 @Component({
@@ -14,5 +13,4 @@ import { CardComponent } from './ui/card.component';
 })
 export class AppComponent {
   title = 'a-labs';
-  url = environment.apiUrl
 }

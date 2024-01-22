@@ -25,21 +25,25 @@ import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';
   ],
   providers: [provideIcons({ radixCheck, radixBell })],
   template: `
-    <section hlmCard class="bg-white h-72">
+    <section hlmCard class="bg-white min-h-12">
       @if (title) {
         <div hlmCardHeader>
           <h3 hlmCardTitle>{{title}}</h3>
           <p hlmCardDescription>{{subTitle}}</p>
         </div>
       }
-      <div hlmCardContent class="grid gap-4">
+      <div hlmCardContent class="grid gap-4 p-6">
         <ng-content />
       </div>
-      <div hlmCardFooter class="justify-between"></div>
+
+      @if (footer) {
+        <div hlmCardFooter class="justify-between"></div>
+      }
     </section>
   `,
 })
 export class CardComponent {
   @Input() title?: string;
   @Input() subTitle?: string;
+  @Input() footer?: boolean = false;
 }

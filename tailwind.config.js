@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       "colors": {
-        "shoe-wax": "#2C2C2C"
+        "shoe-wax": "#2C2C2C",
+        "blue-oyster": "#5a78e0"
       }
     },
   },

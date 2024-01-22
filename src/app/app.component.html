@@ -1,14 +1,14 @@
 <div>
 
   <header
-    class="bg-cover bg-center h-72 bg-[url('/assets/images/pattern-bg-mobile.png')] sm:bg-[url('/assets/images/pattern-bg-desktop.png')] flex">
-    <h1 class="text-white text-2xl mx-auto mt-6">A-Labs</h1>
+    class="bg-cover bg-center min-h-52 bg-[url('/assets/images/pattern-bg-mobile.png')] sm:bg-[url('/assets/images/pattern-bg-desktop.png')] flex">
+    <h1 class="text-white text-2xl mx-auto mt-6 z-10">{{title}}</h1>
   </header>
 
   <main class="relative">
-    <div class="absolute min-w-full px-6 -translate-y-1/2">
+    <div class="absolute min-w-full px-6 -translate-y-3/4 z-20">
       <spartan-card>
-        <div class="text-center text-xl p-6">
+        <div class="text-center text-xl">
 
           <div>
             <h2 class="font-bold text-xs uppercase tracking-wider opacity-50 mb-2">Airport</h2>
@@ -20,15 +20,23 @@
             <p>Oslo, Norway</p>
           </div>
 
-          <div class="mt-6">
-            <h2 class="font-bold text-xs uppercase tracking-wider opacity-50 mb-2">Timezone</h2>
-            <p>UTC -05:00</p>
-          </div>
-     
         </div>
       </spartan-card>
     </div>
-    <div class="bg-blue-200 min-h-72"></div>
 
+    <div class="bg-blue-oyster px-6 z-10 min-h-80" id="map">
+      <div class="h-full rounded-md md:flex relative">
+        <app-map />
+      </div>
+    </div>
+
+    <div class="px-6">
+      <div class=" mt-6 z-10">
+        <spartan-card>
+          <app-timetable />
+        </spartan-card>
+      </div>
+    </div>
+    
   </main>
 </div>

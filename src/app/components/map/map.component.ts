@@ -3,6 +3,8 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import * as Leaflet from 'leaflet';
 
+import { Airport } from '../../core/interfaces/airport';
+
 @Component({
   selector: 'app-map',
   standalone: true,
@@ -12,11 +14,21 @@ import * as Leaflet from 'leaflet';
 export class MapComponent implements AfterViewInit {
   
   private map!: Leaflet.Map;
+  private airports: Airport[] = [];
 
   ngAfterViewInit(): void {
     this.initMap();
     // this.getAirports('NO');
   }
+
+  // private getAirports(countryCode: string) {
+  //   this.airportsService.getCountryAirports(countryCode)
+  //     .subscribe((reqResponse) => {
+  //       console.log(reqResponse)
+  //       this.airports = this.filterAirports(reqResponse.response);
+  //       this.displayAirportMarkers();
+  //     });
+  // }
 
   private initMap(): void {
     this.map = Leaflet.map('map', {
@@ -36,7 +48,6 @@ export class MapComponent implements AfterViewInit {
     );
 
     tiles.addTo(this.map);
-    // add controls at the bottom
     Leaflet.control.zoom({ position: 'bottomleft' }).addTo(this.map);
   }
 }

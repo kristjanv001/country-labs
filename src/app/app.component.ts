@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 import { CardComponent } from './ui/card.component';
-import { MapComponent } from './map/map.component';
-import { MenuButtonComponent } from './ui/menu-btn.component';
-import { DropDownMenuComponent } from './ui/dropdown-menu.component';
-import { TimeTableComponent } from './timetable/timetable.component';
+import { MapComponent } from './components/map/map.component';
+import { DropDownMenuComponent } from './components/header/dropdown-menu.component';
+import { TimeTableComponent } from './components/timetable/timetable.component';
+import { HeaderComponent } from './components/header/header.component';
+import { AirportInfoComponent } from './components/airport-info/airport-info.component';
 
 @Component({
   selector: 'app-root',
@@ -16,9 +17,10 @@ import { TimeTableComponent } from './timetable/timetable.component';
     RouterOutlet, 
     CardComponent, 
     MapComponent,
-    MenuButtonComponent,
     DropDownMenuComponent,
-    TimeTableComponent
+    TimeTableComponent,
+    HeaderComponent,
+    AirportInfoComponent
   ],
   templateUrl: './app.component.html'
 })

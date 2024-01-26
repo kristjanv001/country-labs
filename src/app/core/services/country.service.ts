@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, WritableSignal, signal } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, of, tap } from 'rxjs';
 import { CountryInfo } from '../interfaces/country';
@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
   providedIn: 'root'
 })
 export class CountryService {
+  country: WritableSignal<CountryInfo | null> = signal(null);
 
   constructor(private httpClient: HttpClient) { }
 
@@ -19,6 +20,10 @@ export class CountryService {
         }),
         catchError(this.handleError<CountryInfo[]>('getHeroes', []))
       )
+  }
+
+  setSelectedCountry(country: CountryInfo) {
+    this.country.set(country);
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import * as Leaflet from 'leaflet';
 
 import { CountryInfo } from '../interfaces/country';
+import { CountryService } from './country.service';
 
 interface CustomIconOptions extends Leaflet.IconOptions {
   iconSize: Leaflet.PointTuple;
@@ -13,7 +14,7 @@ interface CustomIconOptions extends Leaflet.IconOptions {
 export class MarkerService {
   private selectedMarker?: Leaflet.Marker;
 
-  constructor() {}
+  constructor(private countryService: CountryService) {}
 
   makeMarkers(map: Leaflet.Map, countries: CountryInfo[]): void {
     for (const country of countries) {
@@ -50,6 +51,7 @@ export class MarkerService {
         
         this.selectedMarker = marker;
         // this.airportService.setAirport(airport);
+        this.countryService.setSelectedCountry(country);
       });
 
       marker.addTo(map);

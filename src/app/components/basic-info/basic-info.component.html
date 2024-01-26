@@ -1,22 +1,36 @@
 <div class="flex justify-center">
   <div class="absolute w-full px-6 -translate-y-3/4 z-20 max-w-[900px]">
     <spartan-card>
-      <div class="text-center text-xl sm:flex sm:items-center">
-        
-        @if (true) {
-          <div class="sm:mt-0 sm:flex sm:flex-col sm:items-start sm:mr-10">
-            <h2 class="font-bold text-xs uppercase tracking-wider opacity-50">Country</h2>
-            <p class="text-xl sm:text-2xl">Hello</p>
+      
+      @if (this.country()) {
+        <div class="w-full text-xl flex justify-between items-center min-h-28 0 sm:justify-center sm:items-center">
+
+          <div class="w-full sm:flex h-full sm:items-center">
+            <div class="sm:mt-0 sm:flex sm:flex-col sm:items-start sm:mr-10">
+              <h2 class="font-bold text-xs uppercase tracking-wider opacity-50">Country</h2>
+              <p class="text-xl sm:text-xl">{{this.country()?.name?.common}}</p>
+            </div>
+            
+            <div class="mt-4 sm:mt-0 sm:flex sm:flex-col sm:items-start">
+              <h2 class="font-bold text-xs uppercase tracking-wider opacity-50">Capital</h2>
+              <p class="text-xl sm:text-xl">{{this.country()?.capital?.[0] ?? "N/A"}}</p>
+            </div>
           </div>
-          
-          <div class="mt-6 sm:mt-0 sm:flex sm:flex-col sm:items-start">
-            <h2 class="font-bold text-xs uppercase tracking-wider opacity-50">Capital</h2>
-            <p class="text-xl sm:text-2xl">Hello 2</p>
+
+          <div class="w-24 h-full sm:w-28 sm:h-auto">
+            <img 
+              [src]="this.country()?.flags?.png"
+              alt="" 
+              class="rounded-md bg-cover bg-right opacity-70 border self-start sm:self-center">
           </div>
-        }@else {
-          <p class="opacity-50">Select a location on the map</p>
-        }
-      </div>
+
+        </div>
+      } @else {
+        <div class="text-center text-xl sm:flex sm:items-center min-h-28 justify-center items-center">
+          <p class="text-xl sm:text-xl opacity-50">Pick a country on the map</p>
+        </div>
+      }
     </spartan-card>
   </div>
 </div>
+

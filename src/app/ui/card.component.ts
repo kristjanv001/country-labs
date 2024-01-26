@@ -25,7 +25,10 @@ import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';
   ],
   providers: [provideIcons({ radixCheck, radixBell })],
   template: `
-    <section hlmCard class="bg-white min-h-12">
+    <section 
+      hlmCard 
+      class="bg-white relative ">
+
       @if (title) {
         <div hlmCardHeader>
           <h3 hlmCardTitle>{{title}}</h3>

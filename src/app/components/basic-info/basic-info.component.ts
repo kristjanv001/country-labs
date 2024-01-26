@@ -1,14 +1,21 @@
-import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, effect, inject, signal } from '@angular/core';
 import { CardComponent } from '../../ui/card.component';
-// import { AirportService } from '../../core/services/airport.service';
+import { CountryService } from '../../core/services/country.service';
 
 @Component({
   selector: 'app-basic-info',
   standalone: true,
   imports: [CardComponent],
   templateUrl: './basic-info.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush // TODO!!!
+  changeDetection: ChangeDetectionStrategy.OnPush // ❗️
 })
 export class BasicInfoComponent {
-  // airportName = inject(AirportService).getAirportName();
+  country = inject(CountryService).country;
+
+  constructor() {
+    effect(() => {
+      console.log(this.country()?.name.common);
+    });
+  }
+
 }

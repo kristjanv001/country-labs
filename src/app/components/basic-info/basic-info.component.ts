@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit, effect, inject, signal } fr
 import { CardComponent } from '../../ui/card.component';
 import { CountryService } from '../../core/services/country.service';
 
+
 @Component({
   selector: 'app-basic-info',
   standalone: true,

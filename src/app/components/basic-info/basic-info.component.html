@@ -3,10 +3,10 @@
     <spartan-card>
       
       @if (this.country()) {
-        <div class="w-full text-xl flex justify-between items-center min-h-28 0 sm:justify-center sm:items-center">
+        <div class="w-full text-xl flex justify-between items-center min-h-28 0 sm:justify-center sm:items-center auto-animate">
 
-          <div class="w-full sm:flex h-full sm:items-center">
-            <div class="sm:mt-0 sm:flex sm:flex-col sm:items-start sm:mr-10">
+          <div class="w-full sm:flex h-full sm:items-center auto-animate">
+            <div class="sm:mt-0 sm:flex sm:flex-col sm:items-start sm:mr-10 auto-animate">
               <h2 class="font-bold text-xs uppercase tracking-wider opacity-50">Country</h2>
               <p class="text-xl sm:text-xl">{{this.country()?.name?.common}}</p>
             </div>

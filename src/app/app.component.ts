@@ -5,9 +5,9 @@ import { RouterOutlet } from '@angular/router';
 import { CardComponent } from './ui/card.component';
 import { MapComponent } from './components/map/map.component';
 import { DropDownMenuComponent } from './components/header/dropdown-menu.component';
-import { TimeTableComponent } from './components/timetable/timetable.component';
+import { DetailedInfoComponent } from './components/detailed-info/detailed-info.component';
 import { HeaderComponent } from './components/header/header.component';
-import { AirportInfoComponent } from './components/airport-info/airport-info.component';
+import { BasicInfoComponent } from './components/basic-info/basic-info.component';
 
 @Component({
   selector: 'app-root',
@@ -18,12 +18,12 @@ import { AirportInfoComponent } from './components/airport-info/airport-info.com
     CardComponent, 
     MapComponent,
     DropDownMenuComponent,
-    TimeTableComponent,
+    DetailedInfoComponent,
     HeaderComponent,
-    AirportInfoComponent
+    BasicInfoComponent
   ],
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'A-Labs';
+  title = 'Country-Labs';
 }

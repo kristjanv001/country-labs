@@ -10,7 +10,7 @@ import {
 import { CardComponent } from '../../ui/card.component';
 
 @Component({
-  selector: 'app-timetable',
+  selector: 'app-detailed-info',
   standalone: true,
   imports: [
     HlmTableComponent,
@@ -24,8 +24,8 @@ import { CardComponent } from '../../ui/card.component';
     class: 'w-full overflow-x-auto',
   },
   template: `
-    <div class="px-6">
-      <div class=" mt-6 z-10">
+    <div class="px-6 flex justify-center">
+      <div class=" mt-6 z-10 w-full md:max-w-[900px] md:absolute top-4 md:px-6">
         <spartan-card>
           <hlm-table class="w-full text-xs">
             <hlm-trow class="">
@@ -48,7 +48,7 @@ import { CardComponent } from '../../ui/card.component';
     </div>
   `,
 })
-export class TimeTableComponent {
+export class DetailedInfoComponent {
   protected _invoices = [
     {
       invoice: 'INV001',
@@ -66,4 +66,7 @@ export class TimeTableComponent {
       paymentMethod: 'delayed',
     },
   ];
+
+
+
 }

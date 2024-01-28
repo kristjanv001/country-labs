@@ -38,6 +38,9 @@
       ],
       "@spartan-ng/ui-button-helm": [
         "./src/app/ui/ui-button-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-accordion-helm": [
+        "./src/app/ui/ui-accordion-helm/src/index.ts"
       ]
     }
   },

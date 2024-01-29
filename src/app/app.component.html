@@ -1,10 +1,5 @@
-<app-header [title]="title" />
-
-<main class="relative">
-  <app-basic-info />
-  <div>
-    <app-map />
-    <app-detailed-info-accordion />
-
-  </div>
-</main>
+<div class="relative min-h-screen">
+  <app-header [title]="title" />
+  <router-outlet />
+  <footer class="h-10 bg-blue-oyster sticky top-[100vh] text-white flex items-center justify-center text-xs">2020 | Kristjan Vingel</footer>
+</div>

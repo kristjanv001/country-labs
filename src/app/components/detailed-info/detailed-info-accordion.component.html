@@ -18,7 +18,7 @@
                 <h2 class="text-xs font-bold uppercase tracking-wider opacity-50">Currencies</h2>
                 <ul>
                   @for (currency of this.country()?.currencies | keyvalue; track $index) {
-                  <li class="">{{currency.value.name}}</li>
+                  <li class="ml-4 list-disc">{{currency.value.name}}</li>
                   }
                 </ul>
               </div>
@@ -27,14 +27,14 @@
                 <h2 class="text-xs font-bold uppercase tracking-wider opacity-50">Official Languages</h2>
                 <ul>
                   @for (language of this.country()?.languages | keyvalue; track $index) {
-                  <li class="">{{language.value}}</li>
+                  <li class="ml-4 list-disc">{{language.value}}</li>
                   }
                 </ul>
               </div>
 
               <div>
                 <h2 class="text-xs font-bold uppercase tracking-wider opacity-50">Independence</h2>
-                <p class="">{{this.country()?.independent || this.country()?.name?.common === "Taiwan" ? "Independent" : "Not independent"}}</p>
+                <p class="">{{this.country()?.name?.common === "Taiwan" ? "🌞" : this.country()?.independent ? "Independent" : "Not independent"}}</p>
               </div>
             </brn-accordion-content>
           </div>

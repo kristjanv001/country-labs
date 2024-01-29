@@ -7,7 +7,6 @@ import {
   HlmThComponent,
   HlmTrowComponent,
 } from "@spartan-ng/ui-table-helm";
-
 import { CardComponent } from "../../ui/card.component";
 import { CountryService } from "../../core/services/country.service";
 

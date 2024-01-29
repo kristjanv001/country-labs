@@ -1,12 +1,54 @@
-<div hlmAccordion>
-	<div hlmAccordionItem>
-		<button hlmAccordionTrigger>
-			Additional info
-			<hlm-icon hlmAccIcon />
-		</button>
-		<brn-accordion-content hlm>Yes. It adheres to the WAI-ARIA design pattern.</brn-accordion-content>
-	</div>
-</div>
+@if (this.country()) {
+  <div class="flex justify-center px-6">
+    <div class="top-4 z-10 mt-6 w-full md:absolute md:mt-8 md:max-w-[900px] md:px-6">
+      <spartan-card>
+        <div hlmAccordion>
+          <div hlmAccordionItem>
+            <button hlmAccordionTrigger>
+              Additional info
+              <hlm-icon hlmAccIcon />
+            </button>
+            <brn-accordion-content hlm>
+              <div class="mb-2">
+                <h2 class="text-xs font-bold uppercase tracking-wider opacity-50">Population</h2>
+                <p class="">{{this.country()?.population | number}}</p>
+              </div>
 
+              <div class="mb-2">
+                <h2 class="text-xs font-bold uppercase tracking-wider opacity-50">Currencies</h2>
+                <ul>
+                  @for (currency of this.country()?.currencies | keyvalue; track $index) {
+                  <li class="">{{currency.value.name}}</li>
+                  }
+                </ul>
+              </div>
 
-<!-- ADD additional info :) -->
+              <div class="mb-2">
+                <h2 class="text-xs font-bold uppercase tracking-wider opacity-50">Official Languages</h2>
+                <ul>
+                  @for (language of this.country()?.languages | keyvalue; track $index) {
+                  <li class="">{{language.value}}</li>
+                  }
+                </ul>
+              </div>
+
+              <div class="mb-2">
+                <h2 class="text-xs font-bold uppercase tracking-wider opacity-50">Current Weather</h2>
+                <ul>
+                  @for (currency of this.country()?.currencies | keyvalue; track $index) {
+                  <li class="">{{currency.value.name}}</li>
+                  }
+                </ul>
+              </div>
+
+              <div>
+                <h2 class="text-xs font-bold uppercase tracking-wider opacity-50">Independence</h2>
+                <p class="">{{this.country()?.independent || this.country()?.name?.common === "Taiwan" ? "Independent" : "Not independent"}}</p>
+              </div>
+            </brn-accordion-content>
+          </div>
+        </div>
+      </spartan-card>
+    </div>
+  </div>
+}

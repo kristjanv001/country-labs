@@ -25,6 +25,6 @@ export class HlmAccordionContentDirective {
 	}
 
 	constructor() {
-		this._brn?.setClassToCustomElement('pt-1 pb-4');
+		this._brn?.setClassToCustomElement('pt-0 pb-0');
 	}
 }
